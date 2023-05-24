@@ -4,7 +4,7 @@
 //                 Chris Frewin <https://github.com/princefishthrower>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-interface Config {
+export interface Config {
     logType?: number;
     rtmp?: RtmpConfig;
     http?: HttpConfig;
@@ -94,12 +94,10 @@ interface FissionTaskModel {
     vf: string;
 }
 
-declare class NodeMediaServer {
+export default class NodeMediaServer {
     constructor(config: Config);
     run(): void;
     on(eventName: string, listener: (id: string, StreamPath: string, args: object) => void): void;
     stop(): void;
     getSession(id: string): Map<string, unknown>;
 }
-
-export = NodeMediaServer;
